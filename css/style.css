@@ -1,0 +1,1107 @@
+/* ----- ESTILOS GENERALES Y RESET BÁSICO ----- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #e0e0e0;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden; /* Clear floats si se usan */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: #00c6ff; /* Color de acento para la mayoría de los títulos */
+}
+/* Títulos principales de página (usados en varias páginas) */
+.page-title {
+    text-align: center;
+    font-size: 2.8em;
+    color: #00c6ff;
+    margin-top: 40px;
+    margin-bottom: 20px; /* Ajustado para consistencia */
+}
+.page-subtitle {
+    text-align: center;
+    font-size: 1.2em;
+    color: #c0c0c0;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    color: #00c6ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0095c7;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ----- HEADER Y NAVEGACIÓN ----- */
+header {
+    background-color: #1f1f1f;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #00c6ff;
+}
+
+header .logo-container {
+    float: left;
+    margin: 0;
+}
+
+header .logo-container a {
+    display: inline-block;
+    background-color: #e0e0e0;
+    padding: 5px 8px;
+    border-radius: 5px;
+    line-height: 0;
+    transition: background-color 0.3s ease;
+}
+
+header .logo-container a:hover {
+    background-color: #f0f0f0;
+}
+
+header .logo-container img {
+    height: 40px;
+    width: auto;
+    vertical-align: middle;
+    display: block;
+}
+
+nav {
+    float: right;
+    margin-top: 12px;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: #00c6ff;
+    border-bottom-color: #00c6ff;
+}
+
+/* ----- ESTILOS PARA EL MENÚ HAMBURGUESA ----- */
+.hamburger-menu {
+    display: none;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 1101;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    border-radius: 3px;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-menu.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ----- SECCIÓN HERO (para index.html) ----- */
+.hero {
+    background: linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.7)), url('../images/imagen_hero.jpg') no-repeat center center/cover;
+    background-color: #252537;
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+    border-bottom: 2px solid #0d0d0d;
+}
+
+.hero h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.hero p {
+    font-size: 1.4em;
+    margin-bottom: 35px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ----- BOTONES (CTA) ----- */
+.cta-button {
+    display: inline-block;
+    background-color: #00c6ff;
+    color: #121212;
+    padding: 14px 30px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #0095c7;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    color: #00c6ff;
+    border: 2px solid #00c6ff;
+}
+.cta-button.secondary:hover {
+    background-color: #00c6ff;
+    color: #121212;
+}
+.cta-button.disabled {
+    background-color: #555;
+    color: #aaa;
+    cursor: not-allowed;
+    border-color: #555;
+}
+.cta-button.disabled:hover {
+    background-color: #555;
+    color: #aaa;
+    transform: none;
+}
+
+/* ----- SECCIONES GENERALES (usadas en index.html y otras) ----- */
+.section {
+    padding: 60px 0;
+    text-align: center;
+}
+.section h3 { /* Títulos dentro de .section */
+    font-size: 2.4em;
+    margin-bottom: 30px;
+    color: #00c6ff;
+}
+.section p {
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    color: #c0c0c0; /* Consistencia de color de párrafo */
+}
+.section-dark {
+    background-color: #1a1a2d;
+}
+
+/* ----- TARJETAS DE SERVICIOS (para index.html y similares) ----- */
+.services-grid { /* Usado en index.html para el overview */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.service-card { /* Usado en index.html para el overview */
+    background-color: #252537;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid #00c6ff;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 198, 255, 0.15);
+}
+.service-card h4 { /* Títulos dentro de .service-card */
+    color: #00c6ff;
+    margin-top: 0;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+}
+.service-card p {
+    font-size: 1em;
+    margin-bottom: 0;
+    color: #c0c0c0; /* Consistencia de color de párrafo */
+}
+
+/* ----- PAGE SPECIFIC: Nosotros (nosotros.html) ----- */
+.about-section {
+    padding: 30px 0;
+}
+.about-section h2 { /* Títulos de sección en página "Nosotros" */
+    font-size: 2.2em;
+    color: #00c6ff;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.about-section p, .about-section li {
+    font-size: 1.1em;
+    color: #c0c0c0;
+    margin-bottom: 15px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.about-section strong {
+    color: #e0e0e0;
+}
+.about-section ul {
+    list-style-position: inside;
+    padding-left: 0;
+}
+.mission-vision-values {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+.mvv-card {
+    background-color: #252537;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid #00c6ff;
+}
+.mvv-card h3 { /* Títulos Misión, Visión, Valores */
+    color: #00c6ff;
+    margin-top: 0;
+    font-size: 1.5em;
+}
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+.team-member-card {
+    background-color: #252537;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.team-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #00c6ff;
+}
+.team-member-card h4 { /* Nombre de miembro */
+    color: #e0e0e0;
+    font-size: 1.4em;
+    margin-bottom: 5px;
+}
+.team-role {
+    color: #00c6ff;
+    font-size: 1em;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+.team-bio {
+    font-size: 0.9em;
+    color: #c0c0c0;
+}
+
+.team-social-links {
+    margin-top: 15px; /* Espacio entre la bio y los enlaces */
+    padding-top: 10px; /* Espacio adicional si quieres una línea separadora (ver abajo) */
+    /* border-top: 1px solid #3a3a4a; */ /* Opcional: línea separadora */
+    text-align: center; /* Centra los botones de enlace si son inline-block */
+}
+
+.social-link {
+    display: inline-block;
+    margin: 5px; /* Espacio alrededor de cada botón */
+    padding: 8px 15px; /* Tamaño del botón */
+    color: #121212; /* Texto oscuro sobre fondo claro */
+    background-color: #00c6ff; /* Color de acento principal */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 0.9em; /* Tamaño de fuente para el texto del enlace */
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.social-link:hover {
+    background-color: #0095c7; /* Color de acento más oscuro al pasar el mouse */
+    color: #fff; /* Texto blanco al pasar el mouse */
+    transform: translateY(-1px); /* Ligero levantamiento */
+}
+
+/* Si decides usar iconos de imagen o SVG en el futuro:
+.social-link img.icon, 
+.social-link svg.icon {
+    width: 16px; 
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 6px; 
+}
+
+
+/* ----- PAGE SPECIFIC: Servicios (servicios.html - Cards y Modal) ----- */
+.services-card-grid { /* Para la cuadrícula de tarjetas de resumen en servicios.html */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+.service-summary-card { /* Tarjeta de resumen en servicios.html */
+    background-color: #252537;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-left: 4px solid #00c6ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-summary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 198, 255, 0.15);
+}
+.service-summary-card h3 { /* Título de tarjeta de resumen */
+    color: #00c6ff;
+    margin-top: 0;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+}
+.service-summary-card p {
+    font-size: 0.95em;
+    color: #c0c0c0;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+.service-summary-card .cta-button {
+    align-self: flex-start;
+    padding: 10px 20px;
+    font-size: 0.9em;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+    animation: fadeIn 0.3s ease-out;
+}
+.modal-content {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    margin: 5% auto;
+    padding: 30px;
+    border: 1px solid #00c6ff;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 700px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+    animation: slideIn 0.3s ease-out;
+    position: relative;
+}
+.modal-content h2 { /* Título dentro del modal */
+    color: #00c6ff;
+    margin-top: 0;
+    border-bottom: 1px solid #3a3a4a;
+    padding-bottom: 10px;
+}
+.modal-content h3 { /* Subtítulos dentro del modal */
+    color: #e0e0e0;
+    font-size: 1.3em;
+    margin-top: 20px;
+}
+.modal-content ul {
+    padding-left: 20px;
+    list-style-type: disc; /* Asegurar estilo de lista */
+}
+.modal-content ul li {
+     color: #c0c0c0; /* Consistencia de color de párrafo */
+     margin-bottom: 10px; /* Espacio entre items de lista */
+}
+.modal-content ul li ul {
+    padding-left: 20px;
+    list-style-type: circle;
+}
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+.close-button:hover, .close-button:focus {
+    color: #00c6ff;
+    text-decoration: none;
+    cursor: pointer;
+}
+.contact-cta-section { /* Usado en servicios.html y extras.html */
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #1a1a2d;
+    margin-top: 40px;
+}
+.contact-cta-section h3 { color: #00c6ff; }
+.contact-cta-section p { color: #c0c0c0; }
+
+
+/* ----- PAGE SPECIFIC: Extras (extras.html) ----- */
+.extras-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+.extra-card {
+    background-color: #252537;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-left: 4px solid #ffc107; /* Acento dorado */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.extra-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 193, 7, 0.15);
+}
+.extra-card h3 { /* Título tarjeta extra */
+    color: #ffc107; /* Acento dorado */
+    margin-top: 0;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+}
+.extra-card p {
+    font-size: 0.95em;
+    color: #c0c0c0;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+.extra-card .cta-button {
+    align-self: flex-start;
+    padding: 10px 20px;
+    font-size: 0.9em;
+}
+
+/* ----- PAGE SPECIFIC: Impresión 3D (impresion.html) ----- */
+.content-section { /* Usado en impresion.html para bloques de contenido */
+    padding: 30px 0;
+    border-bottom: 1px solid #252537;
+    text-align: left; /* Generalmente el contenido detallado es alineado a la izquierda */
+}
+.content-section:last-child {
+    border-bottom: none;
+}
+.content-section h2 { /* Títulos de sección en impresion.html */
+    font-size: 2.2em;
+    color: #00c6ff;
+    margin-bottom: 20px;
+}
+.content-section p, .content-section li {
+    font-size: 1.05em;
+    color: #c0c0c0;
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+.content-section strong {
+    color: #e0e0e0;
+}
+.content-section ul {
+    list-style-type: disc;
+    padding-left: 25px;
+}
+.print-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+.gallery-item {
+    background-color: #252537;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border: 1px solid #3a3a4a;
+}
+.gallery-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+.gallery-item-caption {
+    padding: 15px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #c0c0c0;
+}
+.gallery-item-caption strong {
+    color: #e0e0e0;
+    display: block;
+    margin-bottom: 5px;
+}
+.dual-location {
+    background-color: #1a1a2d;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.dual-location p {
+    margin: 5px 0;
+    font-size: 1.1em;
+    color: #c0c0c0; /* Consistencia */
+}
+
+/* Ajuste para la cuadrícula de proyectos destacados */
+.print-gallery-grid.featured-prints {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Siempre 3 columnas en pantallas anchas */
+    gap: 25px;
+    margin-top: 20px;
+}
+
+/* Estilos existentes para .gallery-item, .gallery-item img, .gallery-item-caption se mantienen bien */
+/* ... (tus estilos existentes para .gallery-item, etc. van aquí si no están ya) ... */
+
+
+/* Estilos para el Modal de Galería Completa */
+.gallery-modal-content { /* Hereda de .modal-content pero puede tener ajustes */
+    max-width: 90%; /* Más ancho para mostrar más imágenes */
+    width: 1100px; /* O un ancho específico si prefieres */
+}
+
+.full-gallery-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Cuadrícula responsiva para las imágenes */
+    gap: 15px; /* Espacio entre imágenes */
+    margin-top: 20px;
+    max-height: 70vh; /* Altura máxima para el scroll dentro del modal */
+    overflow-y: auto; /* Scroll si hay muchas imágenes */
+    padding: 10px;
+    background-color: #121212; /* Fondo ligeramente más oscuro para la galería interna */
+    border-radius: 5px;
+}
+
+.full-gallery-images img {
+    width: 100%;
+    height: auto; /* Mantiene la proporción */
+    max-height: 180px; /* Limita la altura para uniformidad visual */
+    object-fit: cover; /* Cubre el área designada */
+    border-radius: 5px; /* Bordes redondeados para cada imagen */
+    border: 2px solid #3a3a4a;
+    cursor: pointer; /* Sugiere que se puede hacer clic (para futura funcionalidad de lightbox) */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.full-gallery-images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 198, 255, 0.5);
+}
+
+
+/* ----- PAGE SPECIFIC: Contacto (contacto.html) ----- */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 20px 0;
+}
+.contact-info {
+    flex: 1;
+    min-width: 280px;
+    background-color: #252537;
+    padding: 30px;
+    border-radius: 10px;
+    border-left: 4px solid #00c6ff;
+}
+.contact-info h3 { /* Título en contact-info */
+    color: #00c6ff;
+    margin-top: 0;
+    font-size: 1.6em;
+    margin-bottom: 20px;
+}
+.contact-info p {
+    font-size: 1.05em;
+    color: #c0c0c0;
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+.contact-info a { /* Enlaces dentro de contact-info */
+    color: #00c6ff;
+    word-break: break-all;
+}
+.contact-info a:hover {
+    color: #fff;
+}
+.contact-info .icon {
+    margin-right: 10px;
+    color: #00c6ff;
+}
+.contact-form-section {
+    flex: 2;
+    min-width: 300px;
+}
+.contact-form-section h3 { /* Título "Envíanos un Mensaje" */
+    color: #00c6ff;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #e0e0e0;
+    font-weight: 500;
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #3a3a4a;
+    border-radius: 5px;
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #00c6ff;
+    box-shadow: 0 0 0 2px rgba(0, 198, 255, 0.3);
+}
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+.contact-form .cta-button { /* Botón de envío del formulario */
+    width: auto;
+}
+.form-status { /* Mensajes de Formspree */
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+.form-status.success {
+    background-color: #2ecc71;
+    color: #fff;
+}
+.form-status.error {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+/* ----- ANIMACIONES (Keyframes) ----- */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes slideIn {
+    from {transform: translateY(-50px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+
+/* ----- FOOTER ----- */
+footer {
+    background-color: #1f1f1f;
+    color: #a0a0a0;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.95em;
+    border-top: 2px solid #0d0d0d;
+}
+footer p {
+    margin: 8px 0;
+}
+footer a {
+    color: #00c6ff;
+}
+footer a:hover {
+    color: #fff;
+}
+
+/* ----- LIGHTBOX PARA IMÁGENES ----- */
+.lightbox-modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 3000; /* Encima de otros modales si es necesario */
+    padding-top: 50px; /* Espacio desde arriba */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9); /* Fondo más oscuro para el lightbox */
+    animation: fadeIn 0.3s ease-out; /* Reutilizando animación existente */
+}
+
+.lightbox-content-image {
+    margin: auto;
+    display: block;
+    width: auto; /* Ancho automático */
+    max-width: 85%; /* Máximo ancho de la imagen */
+    height: auto; /* Alto automático */
+    max-height: 80vh; /* Máxima altura de la imagen, deja espacio para caption/cierre */
+    animation: slideIn 0.3s ease-out; /* Reutilizando animación existente */
+}
+
+.lightbox-caption-text {
+    margin: 15px auto 0;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    font-size: 1em;
+}
+
+.lightbox-close-button {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.lightbox-close-button:hover,
+.lightbox-close-button:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Ajustes responsivos para el lightbox si son necesarios */
+@media (max-width: 768px) {
+    .lightbox-content-image {
+        max-width: 95%;
+        max-height: 75vh;
+    }
+    .lightbox-caption-text {
+        font-size: 0.9em;
+    }
+}
+
+/* ----- FOOTER ----- */
+footer {
+    background-color: #1f1f1f;
+    color: #a0a0a0;
+    padding-top: 50px; /* Más espacio arriba */
+    font-size: 0.95em;
+    border-top: 2px solid #0d0d0d;
+}
+
+.footer-content-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Para que se apilen en móviles */
+    justify-content: space-between; /* Espacio entre columnas */
+    gap: 40px; /* Espacio entre columnas si se apilan */
+    padding-bottom: 40px;
+}
+
+.footer-column {
+    flex: 1; /* Ocupa el espacio disponible */
+    min-width: 280px; /* Ancho mínimo antes de apilarse */
+}
+
+.footer-social-column {
+    text-align: left; /* Alineación a la izquierda para esta columna */
+}
+
+.footer-logo-container {
+    margin-bottom: 15px;
+    display: inline-block; /* Para que el contenedor no ocupe todo el ancho */
+}
+
+.footer-logo-container a {
+    display: inline-block;
+    background-color: #e0e0e0; /* Fondo claro para el logo negro */
+    padding: 5px 8px;
+    border-radius: 5px;
+    line-height: 0; /* Evita espacio extra */
+}
+
+.footer-logo-container img {
+    height: 50px; /* Tamaño del logo en el footer */
+    display: block;
+}
+
+.footer-heading {
+    color: #fff;
+    font-size: 1.4em;
+    margin: 0 0 10px 0;
+}
+
+.footer-column p {
+    color: #a0a0a0;
+    margin-bottom: 20px;
+}
+
+.footer-social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin: 0 8px 10px 0; /* Espacio entre iconos */
+    font-size: 1.2em;
+    color: #fff !important;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+.footer-social-links a:hover {
+    transform: translateY(-3px);
+    opacity: 0.85;
+}
+
+/* Colores de Marca para cada Red Social */
+.social-icon.youtube    { background-color: #FF0000; }
+.social-icon.x-twitter  { background-color: #000000; }
+.social-icon.instagram  { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); }
+.social-icon.facebook   { background-color: #1877F2; }
+.social-icon.tiktok     { background-color: #000000; }
+.social-icon.github     { background-color: #000000; }
+
+.footer-info-column {
+    text-align: right; /* Alineación a la derecha para esta columna */
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #a0a0a0;
+}
+
+.footer-links a:hover {
+    color: #00c6ff;
+}
+
+.footer-bottom {
+    background-color: #121212;
+    padding: 20px 0;
+    font-size: 0.9em;
+    text-align: center;
+    border-top: 1px solid #2c3e50;
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+    color: #777;
+}
+
+/* Ajustes responsivos para las nuevas columnas del footer */
+@media (max-width: 768px) {
+    .footer-content-wrapper {
+        flex-direction: column; /* Apilar columnas en móviles */
+        text-align: center; /* Centrar todo en móviles */
+    }
+
+    .footer-social-column, .footer-info-column {
+        text-align: center; /* Asegurar centrado */
+    }
+}
+
+/* ----- AJUSTES RESPONSIVOS ----- */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 0;
+        position: relative;
+    }
+    header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    header .logo-container {
+        float: none;
+        text-align: left;
+    }
+    header .logo-container a {
+        margin-bottom: 0;
+    }
+    header .logo-container img {
+        height: 35px;
+    }
+    .hamburger-menu {
+        display: block;
+    }
+    nav#main-nav {
+        float: none;
+        text-align: left;
+    }
+    nav#main-nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #1c1c1d;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1000;
+        padding: 0;
+        margin:0;
+        border-top: 1px solid #0052D4;
+    }
+    nav#main-nav.menu-open ul {
+        display: block;
+    }
+    nav#main-nav ul li {
+        display: block;
+        margin: 0;
+        text-align: center;
+    }
+    nav#main-nav ul li a {
+        display: block;
+        padding: 15px 20px;
+        color: #e0e0e0;
+        border-bottom: 1px solid #2c3e50;
+        font-size: 1.1em;
+    }
+    nav#main-nav ul li:last-child a {
+        border-bottom: none;
+    }
+    nav#main-nav ul li a:hover,
+    nav#main-nav ul li a.active {
+        background-color: #0052D4;
+        color: #fff;
+        border-bottom-color: #0052D4;
+    }
+
+    .hero h2 { font-size: 2em; }
+    .hero p { font-size: 1.1em; }
+    .section h3, .page-title { font-size: 1.8em; } /* Ajuste para .page-title también */
+    
+    .services-grid, /* Para index.html */
+    .services-card-grid, /* Para servicios.html */
+    .extras-grid, /* Para extras.html */
+    .print-gallery-grid, /* Para impresion.html */
+    .team-grid, /* Para nosotros.html */
+    .mission-vision-values /* Para nosotros.html */
+    {
+        grid-template-columns: 1fr; /* Todas las cuadrículas a una columna en móviles */
+    }
+
+    .contact-container { /* Para contacto.html */
+        flex-direction: column; /* Apila la info y el form */
+    }
+    .modal-content {
+        width: 90%; /* Modal más ancho en móviles */
+        margin: 10% auto; /* Ajuste de margen para modal */
+    }
+    
+}
+
+@media (max-width: 992px) { /* Tablets */
+    .print-gallery-grid.featured-prints {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    }
+    .gallery-modal-content {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) { /* Móviles - hereda el global de 1 columna */
+    /* .print-gallery-grid.featured-prints se volverá de 1 columna por la regla global en tu CSS para .services-grid, etc.
+       Si quieres ser explícito: */
+    .print-gallery-grid.featured-prints {
+        grid-template-columns: 1fr; /* 1 columna en móviles */
+    }
+     .gallery-modal-content {
+        width: 95%;
+        margin: 5% auto;
+        padding: 20px;
+    }
+    .full-gallery-images {
+         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Columnas más pequeñas en móvil */
+         max-height: 75vh;
+    }
+}
+
+
+/* ----- ANIMACIONES AL DESPLAZARSE (SCROLL) ----- */
+.animated-section {
+    opacity: 0; /* Oculto por defecto */
+    transform: translateY(40px); /* Ligeramente desplazado hacia abajo */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animated-section.is-visible {
+    opacity: 1; /* Se vuelve visible */
+    transform: translateY(0); /* Vuelve a su posición original */
+}
+
+/* En css/style.css */
+.testimonial-text {
+    font-style: italic;
+    color: #c0c0c0;
+    margin-bottom: 15px;
+}
